@@ -7,13 +7,13 @@
         <title>18_project_zajno</title>
         <link rel="stylesheet" href="src/style.css" />
     </head>
-    <body>
-        <main class="main w-full bg-[#EBEBEB]">
+    <body class=" relative">
+        <main data-scroll-container class="main w-full bg-[#EBEBEB]">
             <!-- Landing -->
             <section class="landing relative w-full">
                 <!-- Navbar -->
                 <nav
-                    class="nav absolute w-full top-0 left-0 flex justify-between text-sm px-4 py-3"
+                    class="nav absolute w-full z-10 top-0 left-0 flex justify-between text-sm px-4 py-3"
                 >
                     <a class="font-bold tracking-tight" href="#">zajno</a>
                     <a class="font-bold tracking-tight" href="#"
@@ -41,6 +41,7 @@
                 </div>
             </section>
 
+            <!-- Video Section -->
             <section class="video relative w-full h-[80vh]">
                 <button
                     class="watch absolute top-1/2 left-1/2 -translate-x-1/2 px-5 py-2 bg-white/20 rounded-full backdrop-blur-2xl active:scale-95"
@@ -56,9 +57,9 @@
 
             <!-- Work -->
 
-            <section class="work">
+            <section class="work flex px-4 py-3 items-start">
                 <div
-                    class="part1 w-[20%] py-10 flex gap-1 items-end text-2xl font-bold px-4 py-3"
+                    class="part1 w-[20%] py-10 flex gap-1 items-end text-2xl font-bold"
                 >
                     <h3>Work</h3>
                     <svg
@@ -77,11 +78,318 @@
                         <path d="M17 7v10H7" />
                     </svg>
                 </div>
-                <div class="part2 w-[80%]"></div>
+
+                <!-- Part 2 -->
+                <div class="part2 w-[80%] py-10">
+                    <!-- First Paragraph -->
+                    <div class="flex justify-between">
+                        <p class="font-bold text-base w-2/5">
+                            At Zajno, we know your time is precious, and that’s
+                            why we prioritize simplicity and efficiency. Our
+                            team has the expertise and creativity to handle
+                            everything from research and planning to custom
+                            design and development, freeing you from the burden
+                            of micromanagement.
+                        </p>
+                        <p class="font-bold">©2015-26</p>
+                    </div>
+
+                    <!-- Second Projects -->
+                    <div class="projects mt-20 flex flex-col gap-6">
+                        <!-- project 1 -->
+                        <div
+                            class="project flex justify-between font-bold border-t-2 pt-6"
+                        >
+                            <h4 class="text-2xl">01</h4>
+                            <h2 class="w-1/5 text-2xl">
+                                Design & Developnment of the websites 3 pages
+                            </h2>
+                            <div class="text-xl">
+                                <h4 class="text-orange-600">Brightmark</h4>
+                                <h4>Technology</h4>
+                            </div>
+                            <!-- Image div -->
+                            <div class="image-div w-60 bg-red-800">
+                                <img src="./apple.png" alt="" />
+                            </div>
+                        </div>
+
+                        <!-- project 2 -->
+                        <div
+                            class="project flex justify-between font-bold border-t-2 pt-6"
+                        >
+                            <h4 class="text-2xl">02</h4>
+                            <h2 class="w-1/5 text-2xl">
+                                Home page design, 2D illustrations, animation,
+                                visual identity
+                            </h2>
+                            <div class="text-xl">
+                                <h4 class="text-orange-600">Ooki</h4>
+                                <h4>Cryoto</h4>
+                            </div>
+                            <!-- Image div -->
+                            <div class="image-div w-60 bg-red-800">
+                                <img src="./toy.png" alt="" />
+                            </div>
+                        </div>
+
+                        <!-- project 3 -->
+                        <div
+                            class="project flex justify-between font-bold border-t-2 pt-6"
+                        >
+                            <h4 class="text-2xl">03</h4>
+                            <h2 class="w-1/5 text-2xl">
+                                Full-cycle website creation, branding
+                            </h2>
+                            <div class="text-xl">
+                                <h4 class="text-orange-600">8Finance</h4>
+                                <h4>Crypto</h4>
+                            </div>
+                            <!-- Image div -->
+                            <div class="image-div w-60 bg-red-800">
+                                <img src="./phone.png" alt="" />
+                            </div>
+                        </div>
+
+                        <!-- project 4 -->
+                        <div
+                            class="project flex justify-between font-bold border-t-2 pt-6"
+                        >
+                            <h4 class="text-2xl">04</h4>
+                            <h2 class="w-1/5 text-2xl">
+                                Full-cycle website creation, branding
+                            </h2>
+                            <div class="text-xl">
+                                <h4 class="text-orange-600">
+                                    Altered state macine
+                                </h4>
+                                <h4>Technology</h4>
+                            </div>
+                            <!-- Image div -->
+                            <div class="image-div w-60 bg-red-800">
+                                <img src="./shape.avif" alt="" />
+                            </div>
+                        </div>
+
+                        <!-- project 5 -->
+                        <div
+                            class="project flex justify-between font-bold border-t-2 pt-6"
+                        >
+                            <h4 class="text-2xl">05</h4>
+                            <h2 class="w-1/5 text-2xl">
+                                Full-cycle website creation
+                            </h2>
+                            <div class="text-xl">
+                                <h4 class="text-orange-600">Maslo</h4>
+                                <h4>AI Platforn and App</h4>
+                            </div>
+                            <!-- Image div -->
+                            <div class="image-div w-60 bg-red-800">
+                                <img src="./circle.avif" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+
+            <!-- Studio -->
+
+            <section
+                class="studio flex flex-col border-t-2 w-full px-4 py-16 gap-16 items-start"
+            >
+                <!-- Top  -->
+                <div class="grid grid-cols-2">
+                    <!-- Left -->
+                    <div class="top-left flex justify-between">
+                        <div
+                            class="part1 w-[20%] py-10 flex gap-1 items-end text-2xl font-bold"
+                        >
+                            <h3>Studio</h3>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="22"
+                                height="22"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-arrow-down-right-icon lucide-arrow-down-right"
+                            >
+                                <path d="m7 7 10 10" />
+                                <path d="M17 7v10H7" />
+                            </svg>
+                        </div>
+                        <p class="w-3/5 font-bold text-xl">
+                            We're a digital design studio that's all about
+                            breaking the mold! We don't do boring websites or
+                            ordinary apps - we specialize in crafting the
+                            wildest, most unconventional digital experiences out
+                            there.
+                        </p>
+                    </div>
+                    <!--  Right -->
+                    <div class=""></div>
+                </div>
+
+                <!-- Bottom -->
+                <div class="grid grid-cols-2 w-full">
+                    <!-- Bottom Left -->
+                    <div class="img-div">
+                        <img src="./men.avif" alt="" />
+                    </div>
+
+                    <!-- Bottom Right -->
+                    <div class="flex flex-col font-bold text-xl gap-5">
+                        <!-- top -->
+                        <div class="top grid grid-cols-3">
+                            <!-- empty -->
+                            <div class=""></div>
+
+                            <!-- Services -->
+                            <div
+                                class="flex flex-col gap-3 border-l-2 px-3 py-5 text-2xl"
+                            >
+                                <h3>Services</h3>
+                                <p>
+                                    We Design Web Development Mobile Apps
+                                    Branding Motion Graphics 3D Illustration
+                                    Sound Design Webflow
+                                </p>
+                            </div>
+
+                            <!-- Stats -->
+                            <div
+                                class="flex flex-col gap-3 border-l-2 px-3 py-5 text-2xl"
+                            >
+                                <h3>Stats</h3>
+                                <div>
+                                    <p>Founded 2015</p>
+                                    <p>clients 300+</p>
+                                    <p>Countries 12</p>
+                                    <p>Awwwards 62</p>
+                                    <p>Team 28</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- bottom -->
+                        <div class="empty"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Playground -->
+            <section
+                class="playground w-full flex justify-between items-start border-t-2 py-16"
+            >
+                <div
+                    class="part1 w-[20%] py-10 flex gap-1 items-end text-2xl font-bold"
+                >
+                    <h3>Playground Z15 <sup>TM</sup></h3>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-down-right-icon lucide-arrow-down-right"
+                    >
+                        <path d="m7 7 10 10" />
+                        <path d="M17 7v10H7" />
+                    </svg>
+                </div>
+
+                <p class="w-2/5 font-bold text-2xl border-l-2 p-2">
+                    We dare to be different: to experiment, innovate, bring
+                    things into being, and spark emotions in the hearts of
+                    people interacting with us. We proudly stand with our heads
+                    up in the midst of today’s reality that is oversaturated
+                    with templated solutions, and we invite you to join us in
+                    creating something truly unique.
+                </p>
+            </section>
+
+            <!-- 715 -->
+
+            <section
+                class="relative h-[90vh] w-full overflow-hidden font-bold text-sm"
+            >
+                <!-- Image Section -->
+                <div
+                    class="image-sec w-full absolute top-0 left-0  px-5 flex justify-between gap-20 overflow-x-scroll"
+                >
+                    <div class="shrink-0">
+                        <!-- title of that image -->
+                        <img
+                            src="./ipad.avif"
+                            alt=""
+                            class="scroll-img object-cover object-center w-80 h-72 shrink-0"
+                        />
+                        <h2>Motion.ed 2023</h2>
+                    </div>
+                    <div class="shrink-0">
+                        <!-- title of that image -->
+                        <img
+                            src="./green-hair.avif"
+                            alt=""
+                            class="scroll-img object-cover object-center w-72 h-80 shrink-0 mt-10"
+                        />
+                        <h2>The Power of sound 2019</h2>
+                    </div>
+                    <div class="shrink-0">
+                        <!-- title of that image -->
+                        <img
+                            src="./laptop.avif"
+                            alt=""
+                            class="scroll-img object-cover object-center w-60 h-72 shrink-0"
+                        />
+                        <h2>TL/E 2023</h2>
+                    </div>
+                    <div class="shrink-0">
+                        <!-- title of that image -->
+                        <img
+                            src="./laptop_hand.avif"
+                            alt=""
+                            class="scroll-img object-cover object-center w-96 h-72 shrink-0 mt-16"
+                        />
+                        <h2>Zanjo Grid 2018</h2>
+                    </div>
+                    <div class="shrink-0">
+                        <!-- title of that image -->
+                        <img
+                            src="./sofa-laptop.avif"
+                            alt=""
+                            class="scroll-img object-cover object-center w-72 h-80 shrink-0"
+                        />
+                        <h2>Playlist 2020</h2>
+                    </div>
+                    <div class="shrink-0">
+                        <!-- title of that image -->
+                        <img
+                            src="./ipad_chair.avif"
+                            alt=""
+                            class="scroll-img object-cover object-center w-60 h-72 shrink-0 mt-10"
+                        />
+                        <h2>Journey -- Comming soon</h2>
+                    </div>
+                </div>
+
+                <!-- Big Number -->
+                <h2
+                    class="absolute  bottom-0 left-1/2 -translate-x-1/2 translate-y-2/5 text-[60rem] font-bold text-[#FF3928] tracking-tight leading-none"
+                >
+                    715
+                </h2>
+            </section>
+            <canvas class="threeJs w-full h-screen fixed top-0 left-0"></canvas>
         </main>
 
-        <!-- <canvas class="threeJs w-full h-screen"></canvas> -->
-        <!-- <script type="module" src="/src/main.js"></script> -->
+        <script type="module" src="/src/main.js"></script>
     </body>
 </html>
