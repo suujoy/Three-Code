@@ -1,15 +1,73 @@
+import * as THREE from "three";
+import { Raycaster } from "three";
 import Lenis from "lenis";
-// Initialize Lenis
 const lenis = new Lenis();
-
-// Use requestAnimationFrame to continuously update the scroll
-
 import vertex from "../shaders/vertex.glsl";
 import fragment from "../shaders/fragment.glsl";
-import * as THREE from "three";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+// Gsap animate
+const nav = document.querySelector("nav");
+const navLinks = document.querySelectorAll("nav a");
+const branding = document.querySelector(".branding");
+const video = document.querySelector(".video .image2");
+const scrollImages = document.querySelectorAll(".scroll-img");
+const imageDiv = document.querySelectorAll(".image-div");
+
+const tl = gsap.timeline();
+
+gsap.from(navLinks, {
+    y: -50,
+    duration: 0.5,
+    ease: "power4.out",
+    opacity: 0,
+    stagger: 0.2,
+});
+gsap.to(".branding", {
+    y: 100,
+    scrollTrigger: {
+        trigger: ".branding",
+        start: "top 80%",
+        end: "top 50%",
+        scrub: true,
+    },
+});
+
+scrollImages.forEach((image) => {
+    gsap.to(image, {
+        y: 100,
+        scrollTrigger: {
+            trigger: image,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+        },
+    });
+});
+
+imageDiv.forEach((img) => {
+    gsap.from(img, {
+        x: 300,
+        scrollTrigger: {
+            trigger: img,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+        },
+    });
+});
 
 // Mouse and Raycaster
-import { Raycaster } from "three";
 const mouse = new THREE.Vector2();
 const raycaster = new Raycaster();
 
@@ -58,6 +116,9 @@ images.forEach((image) => {
             uMouse: {
                 value: new THREE.Vector2(0.5, 0.5),
             },
+            uHover: {
+                value: 0,
+            },
         },
     });
     const geometry = new THREE.PlaneGeometry(
@@ -90,7 +151,6 @@ const updatePlanePosition = () => {
 const animate = (time) => {
     requestAnimationFrame(animate);
 
-    lenis.raf(time);
     updatePlanePosition();
     renderer.render(scene, camera);
 };
@@ -105,6 +165,8 @@ window.addEventListener("resize", () => {
     updatePlanePosition();
 });
 
+let currentPlane = null;
+
 window.addEventListener("mousemove", (event) => {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -112,13 +174,34 @@ window.addEventListener("mousemove", (event) => {
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(planes);
 
-    planes.forEach((plane) => {
-        plane.material.uniforms.uMouse.value.set(0);
-    })
-
     if (intersects.length > 0) {
-        const intersectPlane = intersects[0];
-        const uv = intersectPlane.uv;
-        intersectPlane.object.material.uniforms.uMouse.value.set(uv.x, uv.y);
+        const intersectPlane = intersects[0].object;
+
+        if (currentPlane !== intersectPlane) {
+            if (currentPlane) {
+                gsap.to(currentPlane.material.uniforms.uHover, {
+                    value: 0,
+                    duration: 0.3,
+                });
+            }
+
+            currentPlane = intersectPlane;
+
+            gsap.to(currentPlane.material.uniforms.uHover, {
+                value: 1,
+                duration: 0.3,
+            });
+        }
+
+        const uv = intersects[0].uv;
+        currentPlane.material.uniforms.uMouse.value.set(uv.x, uv.y);
+    } else {
+        if (currentPlane) {
+            gsap.to(currentPlane.material.uniforms.uHover, {
+                value: 0,
+                duration: 0.3,
+            });
+            currentPlane = null;
+        }
     }
 });
