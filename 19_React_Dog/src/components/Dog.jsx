@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import {
     OrbitControls,
@@ -8,8 +8,14 @@ import {
 } from "@react-three/drei";
 import { normalMap, texture } from "three/tsl";
 import * as THREE from "three";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Dog = () => {
+    gsap.registerPlugin(useGSAP);
+    gsap.registerPlugin(ScrollTrigger);
+
     const model = useGLTF("/models/dog.drc.glb");
 
     useThree(({ camera, scene, gl }) => {
@@ -59,6 +65,45 @@ const Dog = () => {
         }
     });
 
+    const dogModel = useRef(model);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#section-1",
+                endTrigger: "#section-3",
+                start: "top top",
+                end: "bottom bottom",
+                markers: true,
+                scrub: true,
+            },
+        });
+
+        tl.to(dogModel.current.scene.position, {
+            z: "-=0.4",
+            y: "+=.01",
+        })
+            .to(dogModel.current.scene.rotation, {
+                x: `+=${Math.PI / 16}`,
+            })
+            .to(
+                dogModel.current.scene.rotation,
+                {
+                    y: `-=${Math.PI}`,
+                },
+                "third",
+            )
+            .to(
+                dogModel.current.scene.position,
+                {
+                    x: "-=.45",
+                    z: "+=.4",
+                    y: "+=.01",
+                },
+                "third",
+            );
+    }, []);
+
     return (
         <>
             <primitive
@@ -66,7 +111,7 @@ const Dog = () => {
                 position={[0.25, -0.6, 0]}
                 rotation={[0, Math.PI / 6, 0]}
             />
-            <OrbitControls />
+            {/* <OrbitControls /> */}
             <directionalLight
                 position={[0, 10, 5]}
                 intensity={10}
