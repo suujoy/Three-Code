@@ -13,6 +13,7 @@
 html,
 body,
 #root {
+    overflow: hidden;
     width: 100%;
     background: #000;
     color: #fff;
@@ -20,7 +21,7 @@ body,
 
 main {
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 section {
