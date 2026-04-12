@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Dog from "./components/Dog";
 import { Canvas } from "@react-three/fiber";
+import Lenis from "lenis";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
+    useEffect(() => {
+        const lenis = new Lenis({
+            smooth: true,
+        });
+
+        lenis.on("scroll", ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+
+        gsap.ticker.lagSmoothing(0);
+    }, []);
+
     return (
         <>
             <main>
@@ -202,6 +220,7 @@ const App = () => {
                             <h2>Royal Opera Of Wallonia</h2>
                         </div>
                     </div>
+                    <div className="line3"></div>
                 </section>
 
                 {/* Section 3 */}
@@ -230,7 +249,9 @@ const App = () => {
                     {/* Bottom */}
                     <div className="bottom">
                         {/* Left empty */}
-                        <div className="left"></div>
+                        <div className="left">
+                            <div className="line4"></div>
+                        </div>
 
                         {/* Right */}
                         <div className="right">
@@ -263,6 +284,56 @@ const App = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* before footer */}
+                    <div className="end">
+                        <div className="left">
+                            <h2 className="city">Chicago</h2>
+                            <h2 className="city">Amsterdam</h2>
+                            <h2 className="city">Paris</h2>
+                        </div>
+                        <div className="right">
+                            <h2 className="heading">
+                                <span>We</span> <span>Make</span>{" "}
+                                <span>Good</span> <span>Shit</span>
+                            </h2>
+
+                            {/* Links */}
+                            <div className="links">
+                                <a href="#" className="link">
+                                    Ins
+                                </a>
+                                <a href="#" className="link">
+                                    Fb
+                                </a>
+                                <a href="#" className="link">
+                                    Dri
+                                </a>
+                                <a href="#" className="link">
+                                    Tw
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Footer */}
+
+                    <footer>
+                        <div className="left">
+                            <p>We'd like to hear from you</p>
+                            <div className="line6"></div>
+                            <a href="#" className="email">
+                                test.suujoy@gmail.com
+                            </a>
+                        </div>
+                        <div className="right">
+                            <div className="privacy">Privacy Policy</div>
+                            <div className="language">
+                                Language: <span>English</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                    </footer>
                 </section>
             </main>
         </>

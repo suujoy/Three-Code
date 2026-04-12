@@ -108,8 +108,9 @@ const Dog = () => {
     });
 
     const branchMaterial = new THREE.MeshMatcapMaterial({
-        map: branchMap,
+        // map: branchMap,
         normalMap: branchNormalMap,
+        matcap: mat2,
     });
 
     const onBeforeCompile = (shader) => {
@@ -147,6 +148,7 @@ const Dog = () => {
     };
 
     dogMaterial.onBeforeCompile = onBeforeCompile;
+    branchMaterial.onBeforeCompile = onBeforeCompile;
 
     useEffect(() => {
         // Tomorrowland
