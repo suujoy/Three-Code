@@ -7,6 +7,52 @@ const App = () => {
     return (
         <>
             <main>
+                {/* Background Images */}
+                <div className="images">
+                    <img
+                        id="tomoroland"
+                        src="/background/tomoroland.png"
+                        alt=""
+                        className="img1"
+                    />
+                    <img
+                        id="navi-pier"
+                        src="/background/navy-pier.png"
+                        alt=""
+                        className="img2"
+                    />
+                    <img
+                        id="msi-chicago"
+                        src="/background/msi-chicago.png"
+                        alt=""
+                        className="img3"
+                    />
+                    <img
+                        id="louises"
+                        src="/background/louises.png"
+                        alt=""
+                        className="img4"
+                    />
+                    <img
+                        id="kikk-festival"
+                        src="/background/kikk-festival.png"
+                        alt=""
+                        className="img5"
+                    />
+                    <img
+                        id="kennedy-center"
+                        src="/background/kennedy-center.png"
+                        alt=""
+                        className="img6"
+                    />
+                    <img
+                        id="royal-opera"
+                        src="/background/royal-opera.png"
+                        alt=""
+                        className="img7"
+                    />
+                </div>
+
                 <Canvas
                     id="canvas-elem"
                     style={{
@@ -115,49 +161,109 @@ const App = () => {
                     {/* Titels */}
                     <div className="titles">
                         {/* Title 1 */}
-                        <div className="title">
+                        <div img-title="tomoroland" className="title">
                             <small>2020 - ONGOING</small>
                             <h2>Tomoroland</h2>
                         </div>
 
                         {/* Title 2 */}
-                        <div className="title">
+                        <div img-title="navi-pier" className="title">
                             <small>2018 - TODAY</small>
                             <h2>Navy Piar</h2>
                         </div>
 
                         {/* Title 3 */}
-                        <div className="title">
+                        <div img-title="msi-chicago" className="title">
                             <small>2015 - TODAY</small>
                             <h2>MSI CHACIGO</h2>
                         </div>
 
                         {/* Title 4 */}
-                        <div className="title">
+                        <div img-title="louises" className="title">
                             <small>2016</small>
                             <h2>This Was Louise's Phone</h2>
                         </div>
 
                         {/* Title 5 */}
-                        <div className="title">
+                        <div img-title="kikk-festival" className="title">
                             <small>2012 - TODAY</small>
                             <h2>KIKK Festival 2018</h2>
                         </div>
 
                         {/* Title 6*/}
-                        <div className="title">
+                        <div img-title="kennedy-center" className="title">
                             <small>2017</small>
                             <h2>The Kennedy Center</h2>
                         </div>
 
                         {/* Title 7 */}
-                        <div className="title">
+                        <div img-title="royal-opera" className="title">
                             <small>2016 - ONGOING</small>
                             <h2>Royal Opera Of Wallonia</h2>
                         </div>
                     </div>
                 </section>
-                <section id="section-3"></section>
+
+                {/* Section 3 */}
+                <section id="section-3">
+                    {/* Top */}
+                    <div className="top">
+                        {/* Left */}
+                        <div className="left">
+                            <div className="content">
+                                <h4>THIS IS HOW WE DO IT</h4>
+                                <h3>
+                                    We are crafting emotional experiences aimed
+                                    at improving results
+                                </h3>
+                            </div>
+                        </div>
+
+                        {/* Right empty */}
+                        <div className="right"></div>
+                    </div>
+                </section>
+
+                {/* Section 4 */}
+
+                <section id="section-4">
+                    {/* Bottom */}
+                    <div className="bottom">
+                        {/* Left empty */}
+                        <div className="left"></div>
+
+                        {/* Right */}
+                        <div className="right">
+                            {/* Content */}
+                            <div className="content">
+                                {/* Top */}
+                                <div className="top">
+                                    <p>
+                                        Dogstudio is a design & technology firm
+                                        working globally from our offices based
+                                        in Belgium and Chicago. Our strong focus
+                                        on producing high quality & emotional
+                                        brandings, digital products and
+                                        experiences became a signature.
+                                    </p>
+                                    <p>
+                                        We’re passionate about moving people and
+                                        solving problems for the likes of
+                                        Microsoft, The Museum of Science And
+                                        Industry Of Chicago, The Kennedy Center
+                                        of Washington, Dragone, Quanta Magazine,
+                                        and many more.
+                                    </p>
+                                </div>
+
+                                {/* Bottom */}
+                                <div className="bottom">
+                                    Discover our values
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
         </>
     );

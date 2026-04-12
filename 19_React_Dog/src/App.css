@@ -209,3 +209,177 @@ section {
 main:has(#section-2 .titles .title:hover) #canvas-elem::after {
     opacity: 0;
 }
+
+/* Background Images */
+
+.images {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        transition: all 0.3s linear;
+    }
+}
+
+main:has(#section-2 .titles .title[img-title="tomoroland"]:hover)
+    .images
+    #tomoroland {
+    opacity: 1;
+    background: rgb(10, 13, 43);
+}
+
+main:has(#section-2 .titles .title[img-title="navi-pier"]:hover)
+    .images
+    #navi-pier {
+    opacity: 1;
+    background: #080e1d;
+}
+
+main:has(#section-2 .titles .title[img-title="msi-chicago"]:hover)
+    .images
+    #msi-chicago {
+    opacity: 1;
+    background: #0e1b2e;
+}
+
+main:has(#section-2 .titles .title[img-title="louises"]:hover)
+    .images
+    #louises {
+    opacity: 1;
+    background: #0c1321;
+}
+
+main:has(#section-2 .titles .title[img-title="kikk-festival"]:hover)
+    .images
+    #kikk-festival {
+    opacity: 1;
+    background: #1a4db9d9;
+}
+
+main:has(#section-2 .titles .title[img-title="kennedy-center"]:hover)
+    .images
+    #kennedy-center {
+    opacity: 1;
+    background: #083b3b93;
+}
+
+main:has(#section-2 .titles .title[img-title="royal-opera"]:hover)
+    .images
+    #royal-opera {
+    opacity: 1;
+    background: #6d0e0ed2;
+}
+
+#section-3 {
+    min-height: fit-content;
+    margin-top: 20rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 2rem;
+    position: relative;
+    z-index: 0;
+
+    /* section 3 direct top */
+    > .top {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: -1;
+
+        > .left {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            .content {
+                width: 60%;
+
+                h4 {
+                    font-size: 0.8rem;
+                    opacity: 0.5;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                h3 {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        > .right {
+            width: 100%;
+        }
+    }
+}
+
+/* section 4 */
+
+#section-4 {
+    min-height: initial;
+    padding-bottom: 20rem;  
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #01050b 90%);
+
+    /* section 3 direct bottom */
+    > .bottom {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+        z-index: 2;
+
+        > .left {
+            width: 100%;
+        }
+
+        > .right {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .content {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: start;
+                flex-direction: column;
+                gap: 2rem;
+
+                .top {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 2rem;
+
+                    p {
+                        width: 30%;
+                    }
+                }
+
+                .bottom {
+                }
+            }
+        }
+    }
+}
