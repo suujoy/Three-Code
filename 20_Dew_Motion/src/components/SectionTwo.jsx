@@ -5,7 +5,7 @@ import '../styles/sectionTwo.scss'
 const SectionTwo = () => {
   return (
     <section className="section-two">
-        
+        sdfs
     </section>
   )
 }

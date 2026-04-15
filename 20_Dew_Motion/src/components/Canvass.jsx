@@ -15,6 +15,7 @@ const Canvass = () => {
                 left: 0,
                 zIndex: 1,
             }}
+            camera={{fov:20}}
         >
             <Can />
         </Canvas>

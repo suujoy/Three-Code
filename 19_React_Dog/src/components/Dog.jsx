@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
+import { useThree } from "@react-three/fiber";
 import {
     OrbitControls,
     useGLTF,
     useTexture,
     useAnimations,
 } from "@react-three/drei";
-import { normalMap, texture } from "three/tsl";
 import * as THREE from "three";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -238,7 +237,6 @@ const Dog = () => {
             .addEventListener("mouseenter", () => {
                 material.current.uMatcap1.value = mat11;
 
-                
                 gsap.to(material.current.uProgress, {
                     value: 0.0,
                     duration: 0.5,
@@ -255,7 +253,6 @@ const Dog = () => {
             .addEventListener("mouseenter", () => {
                 material.current.uMatcap1.value = mat13;
 
-                
                 gsap.to(material.current.uProgress, {
                     value: 0.0,
                     duration: 0.5,
@@ -266,22 +263,19 @@ const Dog = () => {
                     },
                 });
             });
-        document
-            .querySelector(`.titles`)
-            .addEventListener("mouseleave", () => {
-                material.current.uMatcap1.value = mat2;
+        document.querySelector(`.titles`).addEventListener("mouseleave", () => {
+            material.current.uMatcap1.value = mat2;
 
-                
-                gsap.to(material.current.uProgress, {
-                    value: 0.0,
-                    duration: 0.5,
-                    onComplete: () => {
-                        material.current.uMatcap2.value =
-                            material.current.uMatcap1.value;
-                        material.current.uProgress.value = 1.0;
-                    },
-                });
+            gsap.to(material.current.uProgress, {
+                value: 0.0,
+                duration: 0.5,
+                onComplete: () => {
+                    material.current.uMatcap2.value =
+                        material.current.uMatcap1.value;
+                    material.current.uProgress.value = 1.0;
+                },
             });
+        });
     }, []);
 
     model.scene.traverse((child) => {

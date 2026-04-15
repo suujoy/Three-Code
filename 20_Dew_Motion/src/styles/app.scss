@@ -22,16 +22,21 @@ body,
 #root {
     height: 100%;
     width: 100%;
-    background: black;
     overflow-x: hidden;
 }
 
-#root::-webkit-scrollbar{
+#root::-webkit-scrollbar {
     display: none;
 }
 
 main {
-    height: 100%;
     width: 100%;
     position: relative;
+}
+
+main::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
 }
